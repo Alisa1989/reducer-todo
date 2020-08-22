@@ -8,7 +8,9 @@ const AddTodoForm = (props) => {
         // if (this.state.item.trim().length){
         //     this.props.addItem(this.state.item);
         // }
-        props.addItem(newTodo);
+
+        //props.addItem(newTodo);
+        props.dispatch({type: "ADD_TODO", payload: newTodo});
         setNewTodo({item: "", completed: false, id: new Date()});
         console.log("submitted");
     }
@@ -33,9 +35,11 @@ return(
             />
         </label>
         <button>Add item to list</button>
-        <button onClick={props.clearCompleted}>Clear Completed</button>
     </form>
 );
 }
 
 export default AddTodoForm;
+//<button onClick={props.dispatch({type: "FILTER_TODOS" })}>Clear Completed</button>
+
+//<button onClick={props.clearCompleted}>Clear Completed</button>
