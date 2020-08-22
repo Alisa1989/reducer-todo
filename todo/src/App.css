@@ -1,0 +1,67 @@
+body {
+  font-size: 2rem;
+}
+
+.App {
+  text-align: center;
+}
+h1.main-header {
+  color: white;
+  padding: 2rem;
+  
+  text-decoration: red underline;
+}
+.todo-container {
+  display:flex;
+  flex-wrap: wrap;
+
+  max-width: 80%;
+  margin: 0 auto;
+}
+.todo {
+  background-image: linear-gradient(to bottom, rgb(182, 197, 182), white);
+  padding: 5px;
+  border-radius: 100px;
+  margin: 5px;
+  margin: 20px;
+  width: 26%;
+  cursor: pointer;
+}
+.completed {
+  background-image: linear-gradient(to bottom, rgb(54, 145, 54), white);
+}
+.done-off {
+  display: none;
+}
+
+form {
+  margin-bottom: 20px;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: bottom;
+  height: 4rem;
+}
+
+.form__inputLabel{
+  background-color: pink;
+  position: relative;
+}
+
+form input{
+  position: absolute;
+  right: 0rem;
+  top: 15%;
+  background-color: white;
+  height: 60%;
+  padding-top: .2rem;
+}
+
+form button{
+  cursor: pointer;
+  background: yellow;
+  border: none;
+  border-right: 1px black;
+  font-size: 2rem;
+  padding-top: 1rem;
+}
