@@ -5,13 +5,12 @@ const AddTodoForm = (props) => {
 
     const formSubmit = e => {
         e.preventDefault();
-        // if (this.state.item.trim().length){
-        //     this.props.addItem(this.state.item);
-        // }
-
-        //props.addItem(newTodo);
-        props.dispatch({type: "ADD_TODO", payload: newTodo});
+        
+         if (newTodo.item[0].trim().length){
+             props.dispatch({type: "ADD_TODO", payload: newTodo})};
+        //props.dispatch({type: "ADD_TODO", payload: newTodo})
         setNewTodo({item: "", completed: false, id: new Date()});
+        //props.addItem(newTodo);
         console.log("submitted");
     }
 
@@ -22,9 +21,14 @@ const AddTodoForm = (props) => {
         })
     }
 
+    const clearCompleted = e =>{
+        e.preventDefault();
+        props.dispatch({type: "FILTER_TODOS" });
+    }
+
 return(
     <form onSubmit={formSubmit}>
-        <label>
+        <label className="form__inputLabel">
             <input 
                 id= "item"
                 type= "text"
@@ -35,11 +39,11 @@ return(
             />
         </label>
         <button>Add item to list</button>
+        <button onClick={clearCompleted}>Clear Completed</button>
     </form>
 );
 }
 
 export default AddTodoForm;
-//<button onClick={props.dispatch({type: "FILTER_TODOS" })}>Clear Completed</button>
 
 //<button onClick={props.clearCompleted}>Clear Completed</button>

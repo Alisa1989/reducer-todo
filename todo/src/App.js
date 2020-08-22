@@ -39,9 +39,9 @@ const App = () => {
   // }
 
   return (
-    <div>
+    <div className= "App">
+      <h1 className="main-header">Todo List</h1>
       <AddTodoForm dispatch={dispatch}/>
-      <h1>Todo List</h1>
       <TodoList todoList={todoList} dispatch={dispatch}/>
     </div>
   );
